@@ -3,9 +3,9 @@ import '../rick-theme.css';
 import Image from 'next/image';
 import { notFound } from 'next/navigation';
 import type { Metadata } from 'next';
-import { getAllCharacterIds, getCharacter, TEN_DAYS } from '@/lib/rick-morty';
+import { getAllCharacterIds, getCharacter } from '@/lib/rick-morty';
 
-export const revalidate = TEN_DAYS;
+export const revalidate = 864000;
 export const dynamicParams = false;
 export async function generateStaticParams() {
   const ids = await getAllCharacterIds();
