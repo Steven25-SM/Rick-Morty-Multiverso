@@ -6,10 +6,9 @@ import type { Metadata } from 'next';
 import { getAllCharacterIds, getCharacter } from '@/lib/rick-morty';
 
 export const revalidate = 864000;
-export const dynamicParams = false;
+export const dynamicParams = true;
 export async function generateStaticParams() {
-  const ids = await getAllCharacterIds();
-  return ids.map(id => ({ id }));
+  return [];
 }
 
 type Props = { params: Promise<{ id: string }> };
